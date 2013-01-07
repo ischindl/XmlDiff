@@ -1,0 +1,159 @@
+1. What is XmlDiff
+2. Input and output description
+3. Configure the output
+4. Interpret the output
+
+
+
+*********************
+1. What is XmlDiff
+*********************
+
+XmlDiff is a Java library that gets the difference between two XML files in a configurable way.
+
+The configuration can be provided through in an extra XML file. It's optional and useful when
+you want to reduce the output to only the data that you are interested in, or to make sure that
+this important data is kept in the output after the comparison has finished.
+
+Known limitations:
+- can not handle XML namespaces.
+
+Features for the next release:
+- handle XML namespaces.
+
+The source code available at https://github.com/AlinaIoanaFlorea/XmlDiff.
+
+
+
+**********************************
+2. Input and output description
+**********************************
+
+All provided XML files must be valid XML files!
+Description eg:
+
+INPUT: old.xml new.xml config.xml
+OUTPUT: xmlDiff
+
+old.xml
+- is the older version of the XML file to be compared
+- it is mandatory 
+
+new.xml
+- is the newer version of the XML file to be compared
+- it is mandatory
+
+config.xml
+- is the optional configuration file
+- it can be used to specify which tags to be removed and/or kept from the output
+- for more information check the configuration paragraph
+
+xmlDiff
+- represents the output produced by XmlDiff of the difference between the old.xml and new.xml
+files in String format
+- for more information check the paragraph about how to interpret the output
+
+
+
+**************************
+3. Configure the output
+**************************
+
+You can use these tags to configure the XmlDiff's output:
+- <toKeep> to list inside it the tags to be kept in the output even if they did not change,
+else the tags that did not changed will not be part of the output
+- <toRemove> to list inside it the tags to be removed from the output even if they changed
+
+<toKeep> and <toRemove>:
+ - are optional
+ - if present they must use these exact names else their content will be ignored
+ - can be present multiple times in the root tag of your configuration file, and their content
+ will get accumulated
+ - <toKeep> has priority over what's inside <toRemove>, eg: if a tag <xyz> is listed inside
+ both of these configuration tags, then <xyz> will be kept in the XmlDiff's output (if it's found
+ in the files being compared)
+- if a tag <address> has a child tag <city> then it's enough to specify only the <xyz> tag in
+the configuration file, and all its child tags will have the same fate
+
+
+Example: If the tags listed inside <toKeep> are part of a tag marked to be removed, eg <person>,
+then they will be removed too. This will not happen if they are found outside the <person> tag:
+
+<conf>
+    <toKeep>
+        <firstName></firstName>
+        <lastName></lastName>
+        <age></age>
+    </toKeep>
+
+    <toRemove>
+        <person></person>
+    </toRemove>
+</conf>
+
+
+
+Example: Don't specify any child tags inside the <address> tag, as they are be ignored in the
+configuration process, plus they will anyway have the same fate as their parent:
+
+<conf>
+    <toKeep>
+        <address>
+            <city></city>
+            <street></street>
+        </address>
+    </toKeep>
+
+    <toRemove>
+    </toRemove>
+</conf>
+
+
+
+Example: Don't specify any configuration file if you don't need any configuration,
+as it's useless and a waste of processing time:
+
+<conf>
+</conf>
+
+
+
+
+**************************
+4. Interpret the output
+**************************
+
+The XmlDiff's output stream contains only tags and attributes that have CHANGED, are NEW,
+DELETED or have been marked to be kept in the configuration file.
+
+If some tags/attributes are not marked in the output, it means that they did not changed
+but have been marked to be kept in the configuration file.
+
+These changes are marked by introducing an extra attribute named:
+ - "mod" for tags
+ - "mod_attributeName" for attributes
+ so it can be clear which XML element they mark.
+
+ These "mod" attributes will hold the modification type: CHANGED, NEW or DELETED.
+
+
+
+Example:
+
+old.xml:
+<address valid="true">
+    <city> New York </city>
+    <street> Broadway 260 </street>
+</address>
+
+
+new.xml:
+<address valid="false">
+    <street> Broadway 260 </street>
+</address>
+
+
+XmlDiff's output:
+<address mod="CHANGED" valid="false" mod_valid="CHANGED">
+    <city mod="DELETED"> New York </city>
+</address>
