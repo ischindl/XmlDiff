@@ -9,19 +9,16 @@
 1. What is XmlDiff
 *********************
 
-XmlDiff is a Java library that gets the difference between two XML files in a configurable way.
+XmlDiff is a Java library that gets the difference between two XML files in a "meaningful"/configurable way.
 
-The configuration can be provided through in an extra XML file. It's optional and useful when
+The configuration is optional and can be provided through an extra XML file. It is useful when
 you want to reduce the output to only the data that you are interested in, or to make sure that
-this important data is kept in the output after the comparison has finished.
+this important data is kept in the output after the comparison process.
 
-Known limitations:
-- can not handle XML namespaces.
+Know limitations:
+- can not process XML namespaces. To be introduced in the next release.
 
-Features for the next release:
-- handle XML namespaces.
-
-The source code available at https://github.com/AlinaIoanaFlorea/XmlDiff.
+The source code is available at https://github.com/AlinaIoanaFlorea/XmlDiff.
 
 
 
@@ -29,19 +26,24 @@ The source code available at https://github.com/AlinaIoanaFlorea/XmlDiff.
 2. Input and output description
 **********************************
 
-All provided XML files must be valid XML files!
-Description eg:
+XmlDiff expects as input the path of two XML files (plus if needed one more - the optional configuration file).
+It will return the XML difference between these two files in StringBuilder format.
+
+
+Example:
+
+All input XML files must be valid XML files!
 
 INPUT: old.xml new.xml config.xml
 OUTPUT: xmlDiff
 
 old.xml
 - is the older version of the XML file to be compared
-- it is mandatory 
+- is mandatory 
 
 new.xml
 - is the newer version of the XML file to be compared
-- it is mandatory
+- is mandatory
 
 config.xml
 - is the optional configuration file
@@ -49,8 +51,8 @@ config.xml
 - for more information check the configuration paragraph
 
 xmlDiff
-- represents the output produced by XmlDiff of the difference between the old.xml and new.xml
-files in String format
+- is the XML difference (in StringBuilder format) produced by XmlDiff between the old.xml and new.xml
+files 
 - for more information check the paragraph about how to interpret the output
 
 
@@ -59,21 +61,22 @@ files in String format
 3. Configure the output
 **************************
 
-You can use these tags to configure the XmlDiff's output:
-- <toKeep> to list inside it the tags to be kept in the output even if they did not change,
-else the tags that did not changed will not be part of the output
-- <toRemove> to list inside it the tags to be removed from the output even if they changed
+You can use these tags to configure the XmlDiff output:
+- <toKeep>: list inside it the tags to be kept in the output even if they did not change
+(else the tags that did not changed will not be part of the output as they don't represent 
+a difference)
+- <toRemove>: list inside it the tags to be removed from the output even if they changed
 
 <toKeep> and <toRemove>:
- - are optional
- - if present they must use these exact names else their content will be ignored
- - can be present multiple times in the root tag of your configuration file, and their content
- will get accumulated
- - <toKeep> has priority over what's inside <toRemove>, eg: if a tag <xyz> is listed inside
- both of these configuration tags, then <xyz> will be kept in the XmlDiff's output (if it's found
- in the files being compared)
-- if a tag <address> has a child tag <city> then it's enough to specify only the <xyz> tag in
+- are optional
+- if present they must use these exact names else their content will be ignored
+- must apper inside the root tag of the configuration file so not inside any other tags
+- can be present multiple times and their content will get accumulated
+- <toKeep> has priority over what's inside <toRemove>, eg: if a tag <address> is listed inside
+ both of these configuration tags, then <address> will be kept in the XmlDiff's output
+- if a tag <address> has a child tag <city> then it's enough to specify only the <address> tag in
 the configuration file, and all its child tags will have the same fate
+
 
 
 Example: If the tags listed inside <toKeep> are part of a tag marked to be removed, eg <person>,
@@ -93,8 +96,9 @@ then they will be removed too. This will not happen if they are found outside th
 
 
 
-Example: Don't specify any child tags inside the <address> tag, as they are be ignored in the
-configuration process, plus they will anyway have the same fate as their parent:
+Example: Only the tags specified right under the configuration files will be used in the configuration,
+any child tags will be ignored, eg: <address> will be used in the configuration but its child tags <city> and <street>
+will be ignored:
 
 <conf>
     <toKeep>
@@ -108,10 +112,41 @@ configuration process, plus they will anyway have the same fate as their parent:
     </toRemove>
 </conf>
 
+If you want to use <city> and <street> also in the configuration then specify them right under <toKeep>:
+
+<conf>
+    <toKeep>
+        <address></address>
+        <city></city>
+        <street></street>        
+    </toKeep>
+
+    <toRemove>
+    </toRemove>
+</conf>
 
 
-Example: Don't specify any configuration file if you don't need any configuration,
-as it's useless and a waste of processing time:
+
+Example: <toKeep> has priority over <toRemove>:
+
+<conf>
+    <toKeep>
+        <address></address>
+        <city></city>     
+    </toKeep>
+
+    <toRemove>
+        <city></city>               <!-- Will not be deleted as <toKeep> has priority over <toRemove> -->
+    </toRemove>
+
+    <toKeep>
+        <street></street>           <!-- Only this tag will be removed, if found -->
+    </toKeep>
+</conf>
+
+
+
+Example: An empty configuration XML file is valid but useless:
 
 <conf>
 </conf>
@@ -123,7 +158,7 @@ as it's useless and a waste of processing time:
 4. Interpret the output
 **************************
 
-The XmlDiff's output stream contains only tags and attributes that have CHANGED, are NEW,
+The XmlDiff output contains only tags and attributes that have CHANGED, are NEW,
 DELETED or have been marked to be kept in the configuration file.
 
 If some tags/attributes are not marked in the output, it means that they did not changed
