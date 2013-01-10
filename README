@@ -11,9 +11,7 @@
 
 XmlDiff is a Java library that gets the difference between two XML files in a "meaningful"/configurable way.
 
-The configuration is optional and can be provided through an extra XML file. It is useful when
-you want to reduce the output to only the data that you are interested in, or to make sure that
-this important data is kept in the output after the comparison process.
+The configuration is optional and can be provided through an extra XML file. It is useful for reports when you want to reduce the output to only the data that you are interested in, or to make sure that this important data is kept in the output after the comparison process.
 
 Know limitations:
 - can not process XML namespaces. To be introduced in the next release.
@@ -39,7 +37,7 @@ OUTPUT: xmlDiff
 
 old.xml
 - is the older version of the XML file to be compared
-- is mandatory 
+- is mandatory
 
 new.xml
 - is the newer version of the XML file to be compared
@@ -52,7 +50,7 @@ config.xml
 
 xmlDiff
 - is the XML difference (in StringBuilder format) produced by XmlDiff between the old.xml and new.xml
-files 
+files
 - for more information check the paragraph about how to interpret the output
 
 
@@ -62,10 +60,10 @@ files
 **************************
 
 You can use these tags to configure the XmlDiff output:
-- <toKeep>: list inside it the tags to be kept in the output even if they did not change
-(else the tags that did not changed will not be part of the output as they don't represent 
+- <toKeep> to list inside it the tags to be kept in the output even if they did not changed
+(else the tags that did not changed will not be part of the output as they don't represent
 a difference)
-- <toRemove>: list inside it the tags to be removed from the output even if they changed
+- <toRemove> to list inside it the tags to be removed from the output even if they changed
 
 <toKeep> and <toRemove>:
 - are optional
@@ -73,13 +71,13 @@ a difference)
 - must apper inside the root tag of the configuration file so not inside any other tags
 - can be present multiple times and their content will get accumulated
 - <toKeep> has priority over what's inside <toRemove>, eg: if a tag <address> is listed inside
- both of these configuration tags, then <address> will be kept in the XmlDiff's output
+ both of these configuration tags, then <address> will be kept in the output
 - if a tag <address> has a child tag <city> then it's enough to specify only the <address> tag in
-the configuration file, and all its child tags will have the same fate
+the configuration file and all its child tags will have the same fate.
 
 
 
-Example: If the tags listed inside <toKeep> are part of a tag marked to be removed, eg <person>,
+Example: If the tags listed in <toKeep> are part of a tag marked to be removed, eg <person>,
 then they will be removed too. This will not happen if they are found outside the <person> tag:
 
 <conf>
@@ -96,9 +94,10 @@ then they will be removed too. This will not happen if they are found outside th
 
 
 
-Example: Only the tags specified right under the configuration files will be used in the configuration,
-any child tags will be ignored, eg: <address> will be used in the configuration but its child tags <city> and <street>
-will be ignored:
+Example: <address> will be used in the configuration but the tags listed inside it
+<city> and <street> will be ignored unless they truely are found as child tags 
+in the XML files to be compared, in which case they will anyway have the same fate 
+as their parent tag so they don't have to be specified:
 
 <conf>
     <toKeep>
@@ -112,13 +111,15 @@ will be ignored:
     </toRemove>
 </conf>
 
-If you want to use <city> and <street> also in the configuration then specify them right under <toKeep>:
+If <city> and <street> are not really child tags of <address> in the XML files 
+you're comparing, then to use the in the configuration you must specify them 
+right under <toKeep> or <toRemove>:
 
 <conf>
     <toKeep>
         <address></address>
         <city></city>
-        <street></street>        
+        <street></street>
     </toKeep>
 
     <toRemove>
@@ -128,19 +129,20 @@ If you want to use <city> and <street> also in the configuration then specify th
 
 
 Example: <toKeep> has priority over <toRemove>:
+Only <street> will be removed:
 
 <conf>
     <toKeep>
         <address></address>
-        <city></city>     
+        <city></city>
     </toKeep>
 
     <toRemove>
-        <city></city>               <!-- Will not be deleted as <toKeep> has priority over <toRemove> -->
+        <city></city>               
     </toRemove>
 
     <toKeep>
-        <street></street>           <!-- Only this tag will be removed, if found -->
+        <street></street>          
     </toKeep>
 </conf>
 
@@ -169,7 +171,7 @@ These changes are marked by introducing an extra attribute named:
  - "mod_attributeName" for attributes
  so it can be clear which XML element they mark.
 
- These "mod" attributes will hold the modification type: CHANGED, NEW or DELETED.
+These "mod" attributes will hold the modification type: CHANGED, NEW or DELETED.
 
 
 
