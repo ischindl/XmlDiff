@@ -24,7 +24,7 @@ Know limitations:
 2. The projects in the XmlDiff repository
 ********************************************
 
-The projects in the XmlDiff repository (https://github.com/AlinaIoanaFlorea/XmlDiff):
+In the XmlDiff repository https://github.com/AlinaIoanaFlorea/XmlDiff are the following projects:
  
 xmldiff-core - the core part of XmlDiff that produces the differences between two XML files
 
