@@ -1,0 +1,4 @@
+0. The help and cleanup buttons don't work under Windows
+1. Provide a button to download the output data
+2. Build a version with log4j
+3. Make it possible to run multiple instances of this app on the same machine from the same folder by creating for each its own log file

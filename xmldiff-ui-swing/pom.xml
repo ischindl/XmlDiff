@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.alinaioanaflorea</groupId>
+    <artifactId>xmldiff-ui-swing</artifactId>
+    <version>1.0</version>
+    <name>${project.artifactId}</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>  <!-- Build documentation for the public API -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <quiet>true</quiet>
+                    <!-- <outputDirectory>javaDoc</outputDirectory> -->
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.github.alinaioanaflorea.xmldiff.ui.swing.XmlDiff</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>build-package</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>**/src/**</exclude>
+                </excludes>
+            </resource>
+        </resources>
+    </build>
+
+    <dependencies>
+
+        <!-- You'll need to install the xmldiff-core-1.0.jar in your local Maven repository because Maven will not find it in its online repository.
+
+        To do that you can either run the following Maven command (it works with both absolute & relative paths to the jar file):
+
+         /opt/apache-maven-2.2.1/bin/mvn install:install-file \
+        -Dfile=./xmldiff-core-1.0.jar \
+        -DgroupId=com.github.alinaioanaflorea \
+        -DartifactId=xmldiff \
+        -Dversion=1.0 \
+        -Dpackaging=jar \
+        -DlocalRepositoryPath=/home/alina/.m2/repository/
+
+        Or do it manually by adding it on Unix/Mac OS X in ~/.m2/repository/com/github/alinaioanaflorea/xmldiff-core/1.0 (or on Windows in C:\Documents and Settings\username\.m2). Also you must copy there the artifact's pom.xml and rename it to xmldiff-core-1.0.pom so Maven to know what dependencies to download for it. -->
+        <dependency>
+            <groupId>com.github.alinaioanaflorea</groupId>
+            <artifactId>xmldiff-core</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>0.9.18</version>
+        </dependency>
+    </dependencies>
+
+</project>

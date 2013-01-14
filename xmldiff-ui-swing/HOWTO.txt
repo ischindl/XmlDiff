@@ -1,0 +1,8 @@
+1. To build the project with Maven create a Maven Run/Debug configuration and give it the following command line arguments: clean install.
+
+2. To run/debug the project through an IDE create an Application Run/Debug configuration and give it the name of the application's main class. Then you can run this configuration in release/debug mode.
+
+To run the application directly you have to run the jar-with-dependencies version:
+- from command line by running this command: java -jar xmldiff-ui-swing-1.0-jar-with-dependencies.jar
+- or simply by double clicking on it but make sure that java/JVM is the "open with" application for this file and not the archive manager 
+(you can right click the file > choose open with > find & choose java/JVM)
