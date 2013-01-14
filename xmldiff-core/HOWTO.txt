@@ -1,0 +1,3 @@
+To build the project with Maven create a Maven Run/Debug configuration and give it the following command line arguments: clean install.
+
+To debug the project use the test classes in XmlDiff/src/test/java, or create your own.

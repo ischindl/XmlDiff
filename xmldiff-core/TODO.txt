@@ -1,0 +1,10 @@
+1. Introduce in the configuration file the possibility to define a custom name for the attributes that mark the changes in the output stream, because the current default name, "mod", may already by used in the files that are being compared.
+ If this happens now, then two "mod" attributes may appear in the same tag which will render the content of the output as invalid XML.
+
+2. Implement XML namespaces processing.
+
+3. Implement a memory/load calculator to determine the maximum input size that can be processed on the user's machine without JMV crashing or throwing a java.lang.OutOfMemoryError.
+
+4. Implement a performance calculator to determine how much slower the processing gets with an increase in input size on the same machine/configuration.
+
+5. Implement the library to use multiple threads and then do a scalability test to determine if an increase in [threading] resources will produce an increase in performance.

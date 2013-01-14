@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configuration file for the old.xml and new.xml files, that determines what has more priority: <toKeep> or <toRemove> -->
+
+<config>
+
+    <toKeep>
+        <date></date>            <!-- Will be marked mandatory and also its parents -->
+    </toKeep>
+
+    <toRemove>
+        <heading></heading>
+        <body></body>            <!-- Will be deleted -->
+    </toRemove>
+
+    <toKeep>
+        <heading></heading>      <!-- Will stay -->
+        <to></to>
+    </toKeep>
+
+</config>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<messages noteNr="2" rptNr="1">                        <!-- Mark changed -->
+    <note>7</note>                                     <!-- Mark deleted -->
+    <note>                                             <!-- Mark changed -->
+        <date>                                         <!-- Mark changed -->
+            <day>10</day>                              <!-- Mark new -->
+            <month>01</month>                          <!-- Mark new -->
+            <year>2008</year>                          <!-- Mark new -->
+        </date>
+        <body>Don't forget me this weekend !!!</body>  <!-- Mark changed -->
+    </note>
+</messages>

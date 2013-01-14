@@ -1,0 +1,19 @@
+2. Add a reset button for the field that holds the path to the configuration file
+3. Add Javascript validation to keep the client-server communication to a minimum
+4. Provide a button to download the output data
+5. Provide a better navigation menu than opening results in new browser tabs
+6. Build a version with JSF (RichFace/PrimeFaces)
+7. Build a version that contains inside it jetty so it can run without an external application server
+8. Is best to disable the scriplets/Java code from inside the .jsp files inside web.xml with:
+
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <scripting-invalid>true</scripting-invalid>
+        </jsp-property-group>
+    </jsp-config>
+
+And instead use only JSP tags.
+
+9. Should be safe to be ran by multiple users/threads at the same time
+10. Build a standalone version with an embedded Jetty web server

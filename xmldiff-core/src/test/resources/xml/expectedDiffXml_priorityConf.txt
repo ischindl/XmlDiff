@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<messages noteNr="2" rptNr="1">                        <!-- Mark changed -->
+    <note>7</note>                                     <!-- Mark deleted -->
+    <note id="501">                                    <!-- Mark changed -->
+        <date>                                         <!-- Mark changed -->
+            <day>10</day>                              <!-- Mark new -->
+            <month>01</month>                          <!-- Mark new -->
+            <year>2008</year>                          <!-- Mark new -->
+        </date>
+        <to sex="female">Elena</to>                    <!-- Mark mandatory -->
+        <heading>Reminder</heading>                    <!-- Mark mandatory -->
+    </note>
+    <note id="502">                                    <!-- Mark mandatory -->
+        <date>                                         <!-- Mark mandatory -->
+            <day>10</day>                              <!-- Mark mandatory -->
+            <month>01</month>                          <!-- Mark mandatory -->
+            <year>2008</year>                          <!-- Mark mandatory -->
+        </date>
+        <to sex="male">Jani</to>                       <!-- Mark mandatory -->
+        <heading>Re: Reminder</heading>                <!-- Mark mandatory -->
+    </note>
+    <report id="503" />                                <!-- Mark new -->
+</messages>

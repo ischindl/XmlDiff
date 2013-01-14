@@ -1,0 +1,5 @@
+1. TODO: Should be safe to be ran by multiple users/threads at the same time
+2. All fields should be disabled and access to them can be reached only through the browse buttons
+3. Make sure the files are uploaded in the correct folder and at the end of the request deleted
+4. Test the input-output expectations by using various test file combinations (from the test folder).
+5. Do cross-platform tests on Ubuntu, Fedora and Windows using Chrome, Firefox and Internet Explorer to ensure the the same functionality

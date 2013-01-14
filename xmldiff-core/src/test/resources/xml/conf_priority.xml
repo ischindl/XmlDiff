@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <toKeep>
+        <date></date>
+    </toKeep>
+
+    <toRemove>
+        <heading></heading>
+        <body></body>
+    </toRemove>
+
+    <toKeep>
+        <heading></heading>
+        <to></to>
+    </toKeep>
+
+</config> 

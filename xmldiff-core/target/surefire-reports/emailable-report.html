@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.param,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.param td,table.param th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.param th {vertical-align:bottom}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.param td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.param tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Command line test</td><td class="numi">31</td><td class="numi">31</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<a id="summary"></a>
+<table cellspacing=0 cellpadding=0 class="passed">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Time<br/>(Msecs)</th></tr>
+<tr><th colspan="4">Command line test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest<td><a href="#m1"><b>testGetXmlRootNode</b>  </a></td><td class="numi">7</td><td class="numi">331</td></tr>
+<tr class="passedeven"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest<td><a href="#m2"><b>testProcess3_3</b>  </a></td><td class="numi">1</td><td class="numi">4</td></tr>
+<tr class="passedodd"><td rowspan="3">com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest<td><a href="#m3"><b>testGetXmlRootNode</b>  </a></td><td class="numi">7</td><td class="numi">331</td></tr><tr class="passedodd"><td><a href="#m4"><b>testGetXmlAttributes2</b>  </a></td><td class="numi">1</td><td class="numi">285</td></tr><tr class="passedodd"><td><a href="#m5"><b>testGetXmlRootNode</b>  </a></td><td class="numi">7</td><td class="numi">331</td></tr>
+<tr class="passedeven"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemMatcherTest<td><a href="#m6"><b>match5</b>  </a></td><td class="numi">1</td><td class="numi">12</td></tr>
+<tr class="passedodd"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest<td><a href="#m7"><b>testProcess2_2</b>  </a></td><td class="numi">1</td><td class="numi">8</td></tr>
+<tr class="passedeven"><td rowspan="2">com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest<td><a href="#m8"><b>testGetXmlRootNode2</b>  </a></td><td class="numi">1</td><td class="numi">4</td></tr><tr class="passedeven"><td><a href="#m9"><b>testGetXmlRootNode</b>  </a></td><td class="numi">7</td><td class="numi">331</td></tr>
+<tr class="passedodd"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest<td><a href="#m10"><b>testProcess3</b>  </a></td><td class="numi">1</td><td class="numi">3</td></tr>
+<tr class="passedeven"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemMatcherTest<td><a href="#m11"><b>match1</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedodd"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest<td><a href="#m12"><b>testGetXmlRootNode</b>  </a></td><td class="numi">7</td><td class="numi">331</td></tr>
+<tr class="passedeven"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest<td><a href="#m13"><b>testProcess7</b>  </a></td><td class="numi">1</td><td class="numi">3</td></tr>
+<tr class="passedodd"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemMatcherTest<td><a href="#m14"><b>match4</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="5">com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest<td><a href="#m15"><b>testProcess3_4</b>  </a></td><td class="numi">1</td><td class="numi">8</td></tr><tr class="passedeven"><td><a href="#m16"><b>testProcess2_3</b>  </a></td><td class="numi">1</td><td class="numi">23</td></tr><tr class="passedeven"><td><a href="#m17"><b>testProcess2_1</b>  </a></td><td class="numi">1</td><td class="numi">8</td></tr><tr class="passedeven"><td><a href="#m18"><b>testProcess3_2</b>  </a></td><td class="numi">1</td><td class="numi">12</td></tr><tr class="passedeven"><td><a href="#m19"><b>testProcess5</b>  </a></td><td class="numi">1</td><td class="numi">16</td></tr>
+<tr class="passedodd"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemMatcherTest<td><a href="#m20"><b>match</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemToStringConverterTest<td><a href="#m21"><b>testProcess</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest<td><a href="#m22"><b>testGetXmlAttributes</b>  </a></td><td class="numi">1</td><td class="numi">52</td></tr>
+<tr class="passedeven"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemMatcherTest<td><a href="#m23"><b>match3</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest<td><a href="#m24"><b>testGetXmlRootNode</b>  </a></td><td class="numi">7</td><td class="numi">331</td></tr>
+<tr class="passedeven"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemMatcherTest<td><a href="#m25"><b>match2</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemToStringConverterTest<td><a href="#m26"><b>testProcess2</b>  </a></td><td class="numi">1</td><td class="numi">3</td></tr>
+<tr class="passedeven"><td rowspan="4">com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest<td><a href="#m27"><b>testProcess3_1</b>  </a></td><td class="numi">1</td><td class="numi">19</td></tr><tr class="passedeven"><td><a href="#m28"><b>testProcess</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr><tr class="passedeven"><td><a href="#m29"><b>testProcess2</b>  </a></td><td class="numi">1</td><td class="numi">5</td></tr><tr class="passedeven"><td><a href="#m30"><b>testProcess6</b>  </a></td><td class="numi">1</td><td class="numi">7</td></tr>
+<tr class="passedodd"><td rowspan="1">com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest<td><a href="#m31"><b>testGetXmlRootNode</b>  </a></td><td class="numi">7</td><td class="numi">331</td></tr>
+</table>
+<h1>Command line test</h1>
+<a id="m1"></a><h2>com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest:testGetXmlRootNode</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">null</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="1">
+<p>Invalid file path or XML content provided: null</p>
+com.github.alinaioanaflorea.xmldiff.core.common.Utilities.getXmlRootNode(Utilities.java:74)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest.testGetXmlRootNode(UtilitiesTest.java:30)
+<br/>36 lines not shown
+</td></tr>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m2"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess3_3</h2>
+<div style="padding-left:3em">
+<p>Invalid file path or XML content provided: invalidXML2.xml</p>
+com.github.alinaioanaflorea.xmldiff.core.common.Utilities.getXmlRootNode(Utilities.java:74)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverter.convertToXmlElem(FileToXmlElemConverter.java:64)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverter.convertToXmlElem(FileToXmlElemConverter.java:58)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest.testProcess3_3(FileToXmlElemConverterTest.java:74)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m3"></a><h2>com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest:testGetXmlRootNode</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">1</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="1">
+<p>Invalid file path or XML content provided: 1</p>
+com.github.alinaioanaflorea.xmldiff.core.common.Utilities.getXmlRootNode(Utilities.java:74)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest.testGetXmlRootNode(UtilitiesTest.java:30)
+<br/>36 lines not shown
+</td></tr>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m4"></a><h2>com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest:testGetXmlAttributes2</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m5"></a><h2>com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest:testGetXmlRootNode</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">/home/alina/workspace/xmldiff-core/target/test-classes/doc/test.txt</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="1">
+<p>Invalid file path or XML content provided: test.txt</p>
+com.github.alinaioanaflorea.xmldiff.core.common.Utilities.getXmlRootNode(Utilities.java:74)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest.testGetXmlRootNode(UtilitiesTest.java:30)
+<br/>36 lines not shown
+</td></tr>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m6"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemMatcherTest:match5</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m7"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess2_2</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m8"></a><h2>com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest:testGetXmlRootNode2</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m9"></a><h2>com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest:testGetXmlRootNode</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">1</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="1">
+<p>argument type mismatch</p>
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.lang.reflect.Method.invoke(Method.java:601)
+<br/>at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+<br/>at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+<br/>at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:842)
+<br/>at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1166)
+<br/>at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+<br/>at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+<br/>at org.testng.TestRunner.runWorkers(TestRunner.java:1178)
+<br/>at org.testng.TestRunner.privateRun(TestRunner.java:757)
+<br/>at org.testng.TestRunner.run(TestRunner.java:608)
+<br/>at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+<br/>at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+<br/>at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+<br/>at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+<br/>at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+<br/>at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+<br/>at org.testng.TestNG.runSuitesSequentially(TestNG.java:1158)
+<br/>at org.testng.TestNG.runSuitesLocally(TestNG.java:1083)
+<br/>at org.testng.TestNG.run(TestNG.java:999)
+<br/>at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+<br/>at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:158)
+<br/>at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:98)
+<br/>at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:111)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.lang.reflect.Method.invoke(Method.java:601)
+<br/>at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+<br/>at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+<br/>at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+<br/>at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+<br/>at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+<br/>1 lines not shown
+</td></tr>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m10"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess3</h2>
+<div style="padding-left:3em">
+<p>Invalid file path or XML content provided: conf_invalid.xml</p>
+com.github.alinaioanaflorea.xmldiff.core.common.Utilities.getXmlRootNode(Utilities.java:74)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverter.convertToXmlElem(FileToXmlElemConverter.java:64)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverter.convertToXmlElem(FileToXmlElemConverter.java:56)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest.testProcess3(FileToXmlElemConverterTest.java:53)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m11"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemMatcherTest:match1</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m12"></a><h2>com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest:testGetXmlRootNode</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">xyz.xml</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="1">
+<p>Invalid file path or XML content provided: xyz.xml</p>
+com.github.alinaioanaflorea.xmldiff.core.common.Utilities.getXmlRootNode(Utilities.java:74)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest.testGetXmlRootNode(UtilitiesTest.java:30)
+<br/>36 lines not shown
+</td></tr>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m13"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess7</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m14"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemMatcherTest:match4</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m15"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess3_4</h2>
+<div style="padding-left:3em">
+<p>Invalid file path or XML content provided: invalidXML3.xml</p>
+com.github.alinaioanaflorea.xmldiff.core.common.Utilities.getXmlRootNode(Utilities.java:74)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverter.convertToXmlElem(FileToXmlElemConverter.java:64)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverter.convertToXmlElem(FileToXmlElemConverter.java:58)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest.testProcess3_4(FileToXmlElemConverterTest.java:81)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m16"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess2_3</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m17"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess2_1</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m18"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess3_2</h2>
+<div style="padding-left:3em">
+<p>Invalid file path or XML content provided: invalidXML.xml</p>
+com.github.alinaioanaflorea.xmldiff.core.common.Utilities.getXmlRootNode(Utilities.java:74)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverter.convertToXmlElem(FileToXmlElemConverter.java:64)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverter.convertToXmlElem(FileToXmlElemConverter.java:58)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest.testProcess3_2(FileToXmlElemConverterTest.java:67)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m19"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess5</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m20"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemMatcherTest:match</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m21"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemToStringConverterTest:testProcess</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m22"></a><h2>com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest:testGetXmlAttributes</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m23"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemMatcherTest:match3</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m24"></a><h2>com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest:testGetXmlRootNode</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">/home/alina/workspace/xmldiff-core/target/test-classes/xml/invalidXML.xml</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="1">
+<p>Invalid file path or XML content provided: invalidXML.xml</p>
+com.github.alinaioanaflorea.xmldiff.core.common.Utilities.getXmlRootNode(Utilities.java:74)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest.testGetXmlRootNode(UtilitiesTest.java:30)
+<br/>36 lines not shown
+</td></tr>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m25"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemMatcherTest:match2</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m26"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.XmlElemToStringConverterTest:testProcess2</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m27"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess3_1</h2>
+<div style="padding-left:3em">
+<p>Invalid file path or XML content provided: conf_invalid2.xml</p>
+com.github.alinaioanaflorea.xmldiff.core.common.Utilities.getXmlRootNode(Utilities.java:74)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverter.convertToXmlElem(FileToXmlElemConverter.java:64)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverter.convertToXmlElem(FileToXmlElemConverter.java:56)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest.testProcess3_1(FileToXmlElemConverterTest.java:60)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m28"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess</h2>
+<div style="padding-left:3em">
+<p>Invalid file path or XML content provided: null</p>
+com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverter.convertToXmlElem(FileToXmlElemConverter.java:52)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest.testProcess(FileToXmlElemConverterTest.java:14)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m29"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess2</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m30"></a><h2>com.github.alinaioanaflorea.xmldiff.core.service.impl.FileToXmlElemConverterTest:testProcess6</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m31"></a><h2>com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest:testGetXmlRootNode</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em"></td>
+</tr>
+<tr><td style="padding-left:3em" colspan="1">
+<p>Invalid file path or XML content provided: </p>
+com.github.alinaioanaflorea.xmldiff.core.common.Utilities.getXmlRootNode(Utilities.java:74)
+<br/>at com.github.alinaioanaflorea.xmldiff.core.common.UtilitiesTest.testGetXmlRootNode(UtilitiesTest.java:30)
+<br/>36 lines not shown
+</td></tr>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>

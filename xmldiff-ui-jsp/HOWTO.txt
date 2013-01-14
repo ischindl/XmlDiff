@@ -1,0 +1,30 @@
+1. To build the project with Maven create a Maven Run/Debug configuration and give it the following command line arguments: clean install.
+
+
+2. To run/debug/test the project:
+- create a Maven Run/Debug configuration and give it the following command line arguments: jetty:run
+- then run this configuration in release/debug mode
+For this to work the following plugin was added in the pom.xml <build>:
+
+        <plugin>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>maven-jetty-plugin</artifactId>
+            <version>6.1.26</version>
+            <configuration>
+                <connectors>
+                    <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                        <port>8000</port>                <!-- Use another appropriate port number if this is already used-->
+                    </connector>
+                </connectors>
+                <scanIntervalSeconds>10</scanIntervalSeconds>
+            </configuration>
+        </plugin>
+
+IMPORTANT: I noticed that after I linked this project to its github repository, jetty stopped working(it was not stopping at break points anymore), so I disconnected it from the repository so I can use it for testing!
+
+- put some breakpoints if in debug mode
+- then call the app in your browser at this address http://localhost:8000/xmldiff-ui-jsp/.
+
+
+With Tomcat would be: http://localhost:8080/xmldiff-ui-jsp-1.0/
+but first make sure you started it (/opt/apache-tomcat-7.0.32/bin/startup.sh) and deployed the .war to its webapps folder (it will unpack it automatically).
