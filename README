@@ -14,7 +14,7 @@ XmlDiff is a Java app that gets the difference between two XML files in a "meani
 
 The configuration is optional and can be provided as an input XML file. It is useful for reports when you want to reduce the output to only the data that you are interested in, or to make sure that this important data is kept in the output after the comparison process. 
 
-Know limitations:
+Known limitations:
 - can not process XML namespaces. To be introduced in the next release.
 - does not work with huge XML files. To be fixed in the next release.
 
